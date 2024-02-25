@@ -1,0 +1,11 @@
+def sub_collect(sub_string):
+    data = reddit.subreddit('sub_string')
+    posts = data.hot(limit=100)
+    list_ = []
+    for post in posts:
+        list_.append([post.created_utc, post.title, post.selftext, post.subreddit])
+        df_sub_string = pd.DataFrame(data=list_, columns = ['created', 'title', 'self_text', 'subreddit'])
+        df_sub_string.drop_duplicates(subset=['title', 'self_text', 'subreddit'], keep=False)            
+    return df_sub_string
+
+sub_collect('askreddit')
