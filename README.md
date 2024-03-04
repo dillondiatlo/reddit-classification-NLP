@@ -1,10 +1,15 @@
 # Selling Happiness: A Sentimental Journey of Classification
 ***by Dillon Diatlo***
 
+Steve Huffman, money-gobbling Reddit CEO, can’t stop thinking about gobbling money. And now with Reddit valued at $6.5B (a fact he ends every sentence with) Huffman wants even more. 
+
+His next venture? Well, let’s just say Huffman has figured out a way to bottle happiness and wants to sell this happiness to sad athletes—specifically runners and swimmers. 
+
+
 Steve Huffman, Reddit CEO and Innovative Billionaire, can’t stop thinking about making money. His next venture? Sell happiness to sad athletes––specifically runners and swimmers. Not knowing which athletes to market to first on Reddit (which he won't stop reminding us was just evaluated to be worth $6.5B) Huffman approached us to find out two things: 
 
 1) Find out which subreddit is less happy
-2) Create a predictive model that can classify posts to that subreddit
+2) Use Natural Language Processing to build classification models that can accurately categorize Reddit posts so Huffman can sell, sell, sell to unhappy athletes
 
 The objective of this project is to utilize Vectorization and Sentiment Analysis techniques to build a classification model that can accurately categorize which subreddit, r/running or r/Swimming, a user's post belongs to.
 
