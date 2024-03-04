@@ -1,168 +1,119 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 3: Web APIs & NLP
+# Selling Happiness: A Sentimental Journey of Classification
+***by Dillon Diatlo***
 
-### Description
+Steve Huffman, Reddit CEO and Innovative Billionaire, can’t stop thinking about making money. His next venture? Sell happiness to sad athletes––specifically runners and swimmers. Not knowing which athletes to market to first on Reddit (which he won't stop reminding us was just evaluated to be worth $6.5B) Huffman approached us to find out two things: 
 
-In week four we learned about a few different classifiers. In week five we're learning about webscraping, APIs, and Natural Language Processing (NLP). This project will put those skills to the test.
+1) Find out which subreddit is less happy
+2) Create a predictive model that can classify posts to that subreddit
 
-For project 3, your goal is two-fold:
-1. Using [PRAW](https://praw.readthedocs.io/en/stable/index.html), you'll collect posts from two subreddits of your choosing.
-2. You'll then use NLP to train a classifier on which subreddit a given post came from. This is a binary classification problem.
-
-
-#### About the API
-
-For this project, you will be using [PRAW](https://praw.readthedocs.io/en/stable/index.html) to collect posts from two different subreddits. 
-
-To help you get started, we have a [notebook](./Reddit-PRAW-tutorial.ipynb) detailing the process of creating an app and obtaining your API credentials.
-
-Note: Rather than working in this template notebook, make a brand new "scraping" notebook (or script), with your own unique work and comments, so you can use this project in a portfolio!
-
----
-
-### Requirements
-
-- Gather and prepare your data using PRAW.
-- **Create and compare two models**. Any two classifiers at least of your choosing: random forest, logistic regression, KNN, SVM, etc.
-- A Jupyter Notebook with your analysis for a peer audience of data scientists.
-- An executive summary of your results.
-- A short presentation outlining your process and findings for a semi-technical audience.
-
-**Pro Tip:** You can find a good example executive summary [here](https://www.proposify.biz/blog/executive-summary).
-
----
-
-### Necessary Deliverables / Submission
-
-- Code must be in at least one clearly commented Jupyter Notebook.
-- A readme/executive summary in markdown.
-- You must submit your slide deck as a PDF.
-- Materials must be submitted by **10:00 AM (EST) on Monday, 3/4**.
-
----
-
-## Rubric
-Your instructors will evaluate your project (for the most part) using the following criteria.  You should make sure that you consider and/or follow most if not all of the considerations/recommendations outlined below **while** working through your project.
-
-For Project 3 the evaluation categories are as follows:<br>
-**The Data Science Process**
-- Problem Statement
-- Data Collection
-- Data Cleaning & EDA
-- Preprocessing & Modeling
-- Evaluation and Conceptual Understanding
-- Conclusion and Recommendations
-
-**Organization and Professionalism**
-- Organization
-- Visualizations
-- Python Syntax and Control Flow
-- Presentation
-
-**Scores will be out of 30 points based on the 10 categories in the rubric.** <br>
-*3 points per section*<br>
-
-| Score | Interpretation |
-| --- | --- |
-| **0** | *Project fails to meet the minimum requirements for this item.* |
-| **1** | *Project meets the minimum requirements for this item, but falls significantly short of portfolio-ready expectations.* |
-| **2** | *Project exceeds the minimum requirements for this item, but falls short of portfolio-ready expectations.* |
-| **3** | *Project meets or exceeds portfolio-ready expectations; demonstrates a thorough understanding of every outlined consideration.* |
+The objective of this project is to utilize Vectorization and Sentiment Analysis techniques to build a classification model that can accurately categorize which subreddit, r/running or r/Swimming, a user's post belongs to.
 
 
-### The Data Science Process
+# Data Dictionary
 
-**Problem Statement**
-- Is it clear what the goal of the project is?
-- What type of model will be developed?
-- How will success be evaluated?
-- Is the scope of the project appropriate?
-- Is it clear who cares about this or why this is important to investigate?
-- Does the student consider the audience and the primary and secondary stakeholders?
+|Feature|Type|Dataset|Description|
+|---|---|---|---|
 
-**Data Collection**
-- Was enough data gathered to generate a significant result? (At least 1000 posts per subreddit)
-- Was data collected that was useful and relevant to the project?
-- Was data collection and storage optimized through custom functions, pipelines, and/or automation?
-- Was thought given to the server receiving the requests such as considering number of requests per second?
+|**datetime**| *object* | full | The date and time the reddit user posted in the format, Y-MM-DD, H:M:S
+|**all_text**| *object* | full | The combined text of every post's title and user's post description
+|**subreddit**| *int* | full | Binary categorization of subreddits r/running [0] and r/Swimming [1]
+|**sentiment**| *float* | full | A number ranked between -1 and 1 suggesting the overall sentiment of the all_text copy
+|**post_word_count**| *int* | full | The number of words in each individual all_text copy
+|**title_word_count**| *int* | full | The number of words in each individual post title
+|**upper_count**| *int* | full | The number of upper case letters found in individual all_text posts
+|**lower_count**| *int* | full | The number of lower case letters found in individual all_text posts
 
-**Data Cleaning and EDA**
-- Are missing values imputed/handled appropriately?
-- Are distributions examined and described?
-- Are outliers identified and addressed?
-- Are appropriate summary statistics provided?
-- Are steps taken during data cleaning and EDA framed appropriately?
-- Does the student address whether or not they are likely to be able to answer their problem statement with the provided data given what they've discovered during EDA?
+# Executive Summary
+**Summary:**
+Steve Huffman, Reddit CEO and Innovative Billionaire, can’t stop thinking about making money. His next venture? Sell happiness to sad athletes––specifically runners and swimmers. Not knowing which athletes to market to first on Reddit (which he won't stop reminding us was just evaluated to be worth $6.5B) Huffman approached us to find out two things: 
 
-**Preprocessing and Modeling**
-- Is text data successfully converted to a matrix representation?
-- Are methods such as stop words, stemming, and lemmatization explored?
-- Does the student properly split and/or sample the data for validation/training purposes?
-- Does the student test and evaluate a variety of models to identify a production algorithm (**AT MINIMUM:** two models)?
-- Does the student defend their choice of production model relevant to the data at hand and the problem?
-- Does the student explain how the model works and evaluate its performance successes/downfalls?
+1) Find out which subreddit is less happy
+2) Create a predictive model that can classify posts to that subreddit
 
-**Evaluation and Conceptual Understanding**
-- Does the student accurately identify and explain the baseline score?
-- Does the student select and use metrics relevant to the problem objective?
-- Does the student interpret the results of their model for purposes of inference?
-- Is domain knowledge demonstrated when interpreting results?
-- Does the student provide appropriate interpretation with regards to descriptive and inferential statistics?
+**Problem Statement:**
+The objective of this project is to fit to accurately categorize Reddit posts into two separate subreddits, r/running and r/Swimming, based on word frequency and classification techniques.
 
-**Conclusion and Recommendations**
-- Does the student provide appropriate context to connect individual steps back to the overall project?
-- Is it clear how the final recommendations were reached?
-- Are the conclusions/recommendations clearly stated?
-- Does the conclusion answer the original problem statement?
-- Does the student address how findings of this research can be applied for the benefit of stakeholders?
-- Are future steps to move the project forward identified?
+**Goals:**
+The goals of this project are to analyze the subreddits r/running and r/Swimming in order to learn, based on sentiment analysis, which subreddit users are less happy, and then to build a classification model that can use post words to accurately predict which subreddit a post belongs to.
 
+**Project Methodology:**
 
-### Organization and Professionalism
+*Data Collection:* 
+- PRAW
+- Reddit API
+    - r/running
+    - r/Swimming
+- full.csv
+    - this is an accumulation of the following csv's
+        - run feb 26.csv
+        - run feb 27.csv
+        - swim feb 26.csv
+        - swim feb 27.csv
 
-**Project Organization**
-- Are modules imported correctly (using appropriate aliases)?
-- Are data imported/saved using relative paths?
-- Does the README provide a good executive summary of the project?
-- Is markdown formatting used appropriately to structure notebooks?
-- Are there an appropriate amount of comments to support the code?
-- Are files & directories organized correctly?
-- Are there unnecessary files included?
-- Do files and directories have well-structured, appropriate, consistent names?
-
-**Visualizations**
-- Are sufficient visualizations provided?
-- Do plots accurately demonstrate valid relationships?
-- Are plots labeled properly?
-- Are plots interpreted appropriately?
-- Are plots formatted and scaled appropriately for inclusion in a notebook-based technical report?
-
-**Python Syntax and Control Flow**
-- Is care taken to write human readable code?
-- Is the code syntactically correct (no runtime errors)?
-- Does the code generate desired results (logically correct)?
-- Does the code follows general best practices and style guidelines?
-- Are Pandas functions used appropriately?
-- Are `sklearn` and `NLTK` methods used appropriately?
-
-**Presentation**
-- Is the problem statement clearly presented?
-- Does a strong narrative run through the presentation building toward a final conclusion?
-- Are the conclusions/recommendations clearly stated?
-- Is the level of technicality appropriate for the intended audience?
-- Is the student substantially over or under time?
-- Does the student appropriately pace their presentation?
-- Does the student deliver their message with clarity and volume?
-- Are appropriate visualizations generated for the intended audience?
-- Are visualizations necessary and useful for supporting conclusions/explaining findings?
+*Data Cleaning:*
+- Joined all csvs into a single csv
+- Replaced NaN's with empty strings and then combined title column and selftext column into a single column: all_text
+- Turned created_utc column into processable dates and times
+- Dropped weekly automatic r/Swimming rows
+- Dropped extra columns and created columns to count uppercase, lowercase, and post/title words
+- CountVectorized the all_text column for manipulation
 
 
----
+*Exploratory Data Analysis (EDA):* 
+- Created a lemmatizer function and sentiment analysis function
+- Found the top 10 and 25 most frequently used words, bigrams, and trigrams for both subreddits
+- Explored the correlation between datetime and subreddit sentiment
+- Explored the correlation between post/title word count and subreddit sentiment
+- Explored the distribution of sentiment for posts within both subreddits
+- Found the mean positivity of both subreddits
 
-### Why did we choose this project for you?
-This project covers three of the biggest concepts we cover in the class: Classification Modeling, Natural Language Processing and Data Wrangling/Acquisition.
+*Modeling Techniques:* 
+- Found my baseline accuracy of .45
+- CountVectorizer paired with a Multinomial seemed to perform poorly
+- RandomForest and Logistic Regression performed the best overall
+- When paired with TfidVectorizer and a GridSearchCV, I found that both Logistic Regression and RandomForest performed better and well
+- After adding in a lemmatizer and only seeing a slight change, I decided to take my nearly 97%
 
-Part 1 of the project focuses on **Data wrangling/gathering/acquisition**. This is a very important skill as not all the data you will need will be in clean CSVs or a single table in SQL.  There is a good chance that wherever you land you will have to gather some data from some unstructured/semi-structured sources; when possible, requesting information from an API, but sometimes scraping it because they don't have an API (or it's terribly documented).
+*Key Findings:*
+* Based on the analysis conducted, putting lemmatized data through a TfidVectorizer with my LogisticRegression model and fitting that to a GridSearchCV built the most accurate classification model at 96.8%. When looking at the confusion matrix, this performend just minimally better than non-lemmatized data through a TfidVectorizer and Randomforest, fit to a GridSearchCV.
 
-Part 2 of the project focuses on **Natural Language Processing** and converting standard text data (like Titles and Comments) into a format that allows us to analyze it and use it in modeling.
+* r/runner posters seem to be generally happier with a mean positve sentiment analysis of .55, compared to r/Swimming .31
+    * this could mean swimmer are less happy
+    * it can also mean swimmers are less concerned with accomplishmentmets like finish lines and goals
+    
+* There is a correlation between year and posting sentiment
 
-Part 3 of the project focuses on **Classification Modeling**.  Given that project 2 was a regression focused problem, we needed to give you a classification focused problem to practice the various models, means of assessment and preprocessing associated with classification.   
+* All models outperformed my baseline of 45% accuracy.
+
+
+**Plots**
+![Top 10 r/running Words](./Images/Top_10_Words_rRun.png "Top 10 r/running Words")
+![Top 10 r/running Bigrams](./Images/Bi_10_Run.png "Top 10 r/running Bigrams")
+![Top 10 r/running Trigrams](./Images/TTwi_10_Run.png "Top 10 r/running Trigrams")
+![Top 10 r/Swimming Words](./Images/Top_10_Words_rSwim.png "Top 10 r/Swimming Words")
+![Top 10 r/Swimming Bigrams](./Images/Bi_10_Swim.png "Top 10 r/Swimming Bigrams")
+![Top 10 r/Swimming Trigrams](./Images/Tri_10_Swim.png "Top 10 r/Swimming Trigrams")
+![Mean Sentiment Compare](./Images/Mean_Sent_Compare.png "Mean Post Sentiment of r/running and r/Swimming")
+![Sentiment Distribution r/Swimming](./Images/Swim_DistSentiment.png "Sentiment Distribution r/Swimming")
+![Sentiment Distribution r/running](./Images/Run_DistSEntiment.png "Sentiment Distribution r/running")
+![Year vs Sentiment r/running](./Images/Run_Year_Sentiment.png "Year vs Sentiment r/running")
+![Year vs Sentiment r/Swimming](./Images/Swim_Year_Sentiment.png "Year vs Sentiment r/Swimming")
+
+
+**Implications and Conclusion:**
+Tfidvectorizors, paired with LogisticRegression and GridSearchCV seem to work better using anything with a CountVectorizer as Tfidvectorizers represent term frequency and rarity across corpuses, so this paired with the best hyper parameters will result in a solid prediction. Better than a CountVectorizer which is just frequency and, therefore, may include a lot of less important words.
+
+In terms of sentiment analysis, runners have a more positive sentiment. Based on 'Top 10 r/running Trigrams', they seem to be more accomplishment focused, concentrating on wins, goals, and races. These are all emotionally driven terms. At the same time, running has a lower barrier to entry than swimming. It's something most of us can do intuitively. It's therefore easier to start, practice, get better, try races, and more. Runners may not be happier, but they are more emotionally focused.
+
+Comparatively, posts in r/Swimming are more neutral, as can be seen in the 'Year vs Sentiment r/Swimming' and the multi spikes in 'Sentiment Distribution r/Swimming' . Additionally, r/Swimming users seem to be less accomplishment focused and more imporovement focused. This can be seen in 'Top 10 r/Swimming Bigrams' with words like "any advice", "first time", "tech suit", and "started swimming".
+
+**Next Steps**
+Next steps are to begin narrowing down our variables to create a regression model that has a lower RMSE and can fit even better. 
+
+1. <ins>DATETIME</ins> - Models were based on post word frequency, though I wonder if we can get a better model if we also base it on datetime.
+
+2. <ins>STEMMING</ins> - Data was run through a lemmatizer, though not a stemmer. We should go back and see if stemming effects our models at all.
+
+3. <ins>FILTER</ins> - Swimming's trigrams include many long, uninterpretable strings. Go back and create a stop word filter to filter out words longer than a certain length
+
+4. <ins>PINPOINT USERS</ins> - If we are advertising happiness to sad users, we'll need more than just the subreddit they look through. Let's collect their user names and pinpoint them directly. We can also scrape their data and see where else they post and begin to build classes within our swimmer target audience.
