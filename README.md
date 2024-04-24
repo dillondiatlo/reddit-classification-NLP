@@ -13,14 +13,14 @@ The objective of this project is to utilize Vectorization and Sentiment Analysis
 |Feature|Type|Dataset|Description|
 |---|---|---|---|
 
-|**datetime**| *object* | full | The date and time the reddit user posted in the format, Y-MM-DD, H:M:S
-|**all_text**| *object* | full | The combined text of every post's title and user's post description
-|**subreddit**| *int* | full | Binary categorization of subreddits r/running [0] and r/Swimming [1]
-|**sentiment**| *float* | full | A number ranked between -1 and 1 suggesting the overall sentiment of the all_text copy
-|**post_word_count**| *int* | full | The number of words in each individual all_text copy
-|**title_word_count**| *int* | full | The number of words in each individual post title
-|**upper_count**| *int* | full | The number of upper case letters found in individual all_text posts
-|**lower_count**| *int* | full | The number of lower case letters found in individual all_text posts |
+|**datetime**| *object* | full | The date and time the reddit user posted in the format, Y-MM-DD, H:M:S|
+|**all_text**| *object* | full | The combined text of every post's title and user's post description|
+|**subreddit**| *int* | full | Binary categorization of subreddits r/running [0] and r/Swimming [1]|
+|**sentiment**| *float* | full | A number ranked between -1 and 1 suggesting the overall sentiment of the all_text copy|
+|**post_word_count**| *int* | full | The number of words in each individual all_text copy|
+|**title_word_count**| *int* | full | The number of words in each individual post title|
+|**upper_count**| *int* | full | The number of upper case letters found in individual all_text posts|
+|**lower_count**| *int* | full | The number of lower case letters found in individual all_text posts||
 
 # Executive Summary
 
