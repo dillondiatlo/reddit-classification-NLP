@@ -24,13 +24,13 @@ The objective of this project is to utilize Vectorization and Sentiment Analysis
 
 # Executive Summary
 
-**Problem Statement:**
+## **Problem Statement:**
 The objective of this project is to fit to accurately categorize Reddit posts into two separate subreddits, r/running and r/Swimming, based on word frequency and classification techniques.
 
-**Goals:**
+## **Goals:**
 The goals of this project are to analyze the subreddits r/running and r/Swimming in order to learn, based on sentiment analysis, which subreddit users are less happy, and then to build a classification model that can use post words to accurately predict which subreddit a post belongs to.
 
-**Project Methodology:**
+## **Project Methodology:**
 
 *Data Collection:* 
 - PRAW
@@ -80,7 +80,7 @@ The goals of this project are to analyze the subreddits r/running and r/Swimming
 * All models outperformed my baseline of 45% accuracy.
 
 
-**Plots**
+## **Plots**
 ![Top 10 r/running Words](./Images/Top_10_Words_rRun.png "Top 10 r/running Words")
 ![Top 10 r/running Bigrams](./Images/Bi_10_Run.png "Top 10 r/running Bigrams")
 ![Top 10 r/running Trigrams](./Images/Tri_10_Run.png "Top 10 r/running Trigrams")
@@ -94,14 +94,14 @@ The goals of this project are to analyze the subreddits r/running and r/Swimming
 ![Year vs Sentiment r/Swimming](./Images/Swim_Year_Sentiment.png "Year vs Sentiment r/Swimming")
 
 
-**Implications and Conclusion:**
+## **Implications and Conclusion:**
 Tfidvectorizors, paired with LogisticRegression and GridSearchCV seem to work better using anything with a CountVectorizer as Tfidvectorizers represent term frequency and rarity across corpuses, so this paired with the best hyper parameters will result in a solid prediction. Better than a CountVectorizer which is just frequency and, therefore, may include a lot of less important words.
 
 In terms of sentiment analysis, runners have a more positive sentiment. Based on 'Top 10 r/running Trigrams', they seem to be more accomplishment focused, concentrating on wins, goals, and races. These are all emotionally driven terms. At the same time, running has a lower barrier to entry than swimming. It's something most of us can do intuitively. It's therefore easier to start, practice, get better, try races, and more. Runners may not be happier, but they are more emotionally focused.
 
 Comparatively, posts in r/Swimming are more neutral, as can be seen in the 'Year vs Sentiment r/Swimming' and the multi spikes in 'Sentiment Distribution r/Swimming' . Additionally, r/Swimming users seem to be less accomplishment focused and more imporovement focused. This can be seen in 'Top 10 r/Swimming Bigrams' with words like "any advice", "first time", "tech suit", and "started swimming".
 
-**Next Steps**
+## **Next Steps**
 Next steps are to begin narrowing down our variables to create a regression model that has a lower RMSE and can fit even better. 
 
 1. <ins>DATETIME</ins> - Models were based on post word frequency, though I wonder if we can get a better model if we also base it on datetime.
