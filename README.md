@@ -83,7 +83,7 @@ The goals of this project are to analyze the subreddits r/running and r/Swimming
 **Plots**
 ![Top 10 r/running Words](./Images/Top_10_Words_rRun.png "Top 10 r/running Words")
 ![Top 10 r/running Bigrams](./Images/Bi_10_Run.png "Top 10 r/running Bigrams")
-![Top 10 r/running Trigrams](./Images/TTwi_10_Run.png "Top 10 r/running Trigrams")
+![Top 10 r/running Trigrams](./Images/Tri_10_Run.png "Top 10 r/running Trigrams")
 ![Top 10 r/Swimming Words](./Images/Top_10_Words_rSwim.png "Top 10 r/Swimming Words")
 ![Top 10 r/Swimming Bigrams](./Images/Bi_10_Swim.png "Top 10 r/Swimming Bigrams")
 ![Top 10 r/Swimming Trigrams](./Images/Tri_10_Swim.png "Top 10 r/Swimming Trigrams")
