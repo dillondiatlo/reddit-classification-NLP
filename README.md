@@ -89,7 +89,7 @@ The goals of this project are to analyze the subreddits r/running and r/Swimming
 ![Top 10 r/Swimming Trigrams](./Images/Tri_10_Swim.png "Top 10 r/Swimming Trigrams")
 ![Mean Sentiment Compare](./Images/Mean_Sent_Compare.png "Mean Post Sentiment of r/running and r/Swimming")
 ![Sentiment Distribution r/Swimming](./Images/Swim_DistSentiment.png "Sentiment Distribution r/Swimming")
-![Sentiment Distribution r/running](./Images/Run_DistSEntiment.png "Sentiment Distribution r/running")
+![Sentiment Distribution r/running](./Images/Run_DistSentiment.png "Sentiment Distribution r/running")
 ![Year vs Sentiment r/running](./Images/Run_Year_Sentiment.png "Year vs Sentiment r/running")
 ![Year vs Sentiment r/Swimming](./Images/Swim_Year_Sentiment.png "Year vs Sentiment r/Swimming")
 
