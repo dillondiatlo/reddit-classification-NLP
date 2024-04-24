@@ -20,7 +20,7 @@ The objective of this project is to utilize Vectorization and Sentiment Analysis
 |**post_word_count**| *int* | full | The number of words in each individual all_text copy
 |**title_word_count**| *int* | full | The number of words in each individual post title
 |**upper_count**| *int* | full | The number of upper case letters found in individual all_text posts
-|**lower_count**| *int* | full | The number of lower case letters found in individual all_text posts|
+|**lower_count**| *int* | full | The number of lower case letters found in individual all_text posts |
 
 # Executive Summary
 
