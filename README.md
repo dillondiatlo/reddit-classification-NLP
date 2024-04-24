@@ -1,17 +1,11 @@
 # Selling Happiness: A Sentimental Journey of Classification
 ***by Dillon Diatlo***
 
-Steve Huffman, money-gobbling Reddit CEO, can’t stop thinking about gobbling money. And now with Reddit valued at $6.5B (a fact he ends every sentence with) Huffman wants even more. 
-
-His next venture? Well, let’s just say Huffman has figured out a way to bottle happiness and wants to sell this happiness to sad athletes—specifically runners and swimmers. 
-
-
-Steve Huffman, Reddit CEO and Innovative Billionaire, can’t stop thinking about making money. His next venture? Sell happiness to sad athletes––specifically runners and swimmers. Not knowing which athletes to market to first on Reddit (which he won't stop reminding us was just evaluated to be worth $6.5B) Huffman approached us to find out two things: 
+The objective of this project is to utilize Vectorization and Sentiment Analysis techniques to build a classification model that can accurately categorize which subreddit––r/running or r/Swimming––a user's post belongs to. In doing so, I will:
 
 1) Find out which subreddit is less happy
-2) Use Natural Language Processing to build classification models that can accurately categorize Reddit posts so Huffman can sell, sell, sell to unhappy athletes
+2) Use Natural Language Processing to build classification models that can accurately categorize Reddit posts
 
-The objective of this project is to utilize Vectorization and Sentiment Analysis techniques to build a classification model that can accurately categorize which subreddit, r/running or r/Swimming, a user's post belongs to.
 
 
 # Data Dictionary
@@ -26,14 +20,9 @@ The objective of this project is to utilize Vectorization and Sentiment Analysis
 |**post_word_count**| *int* | full | The number of words in each individual all_text copy
 |**title_word_count**| *int* | full | The number of words in each individual post title
 |**upper_count**| *int* | full | The number of upper case letters found in individual all_text posts
-|**lower_count**| *int* | full | The number of lower case letters found in individual all_text posts
+|**lower_count**| *int* | full | The number of lower case letters found in individual all_text posts|
 
 # Executive Summary
-**Summary:**
-Steve Huffman, Reddit CEO and Innovative Billionaire, can’t stop thinking about making money. His next venture? Sell happiness to sad athletes––specifically runners and swimmers. Not knowing which athletes to market to first on Reddit (which he won't stop reminding us was just evaluated to be worth $6.5B) Huffman approached us to find out two things: 
-
-1) Find out which subreddit is less happy
-2) Create a predictive model that can classify posts to that subreddit
 
 **Problem Statement:**
 The objective of this project is to fit to accurately categorize Reddit posts into two separate subreddits, r/running and r/Swimming, based on word frequency and classification techniques.
